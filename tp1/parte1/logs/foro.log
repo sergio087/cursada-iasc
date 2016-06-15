@@ -1,0 +1,94 @@
+Magic happens on port 8001
++registerTeacher | {"name":"docente1","id":null,"host":{"host":"127.0.0.1","port":"8101"},"questions":[],"promiseByQuestion":[]}
+-registerTeacher | {"name":"docente1","endpoint":{"host":"127.0.0.1","port":"8101"},"id":1}
+
++registerTeacher | {"name":"docente2","id":null,"host":{"host":"127.0.0.1","port":"8102"},"questions":[],"promiseByQuestion":[]}
+-registerTeacher | {"name":"docente2","endpoint":{"host":"127.0.0.1","port":"8102"},"id":2}
+
++registerStudent | {"name":"alumno1","id":null,"host":{"host":"127.0.0.1","port":"8201"}}
+-registerStudent | {"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1}
+
++registerStudent | {"name":"alumno2","id":null,"host":{"host":"127.0.0.1","port":"8202"}}
+-registerStudent | {"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2}
+
++registerQuestion | {"studentId":1,"questionTopic":"tp1","questionContent":"preg1?"}
+broadcastQuestion | 5001 to 127.0.0.1:8101
+broadcastQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg1?","answers":[],"date":1461514570717,"id":5001}
+broadcastQuestion | 5001 to 127.0.0.1:8102
+broadcastQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg1?","answers":[],"date":1461514570717,"id":5001}
+broadcastQuestion | 5001 to 127.0.0.1:8202
+broadcastQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg1?","answers":[],"date":1461514570717,"id":5001}
+-registerQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg1?","answers":[],"date":1461514570717,"id":5001}
+
++registerAnswer | {"answerAuthorId":2,"answerCreationDate":1461514571582}
+-registerAnswer | new answer id 101
+
++fulfillAnswer | {"answerAuthorId":2,"answerContent":"rta docente2","answerFulfillmentDate":1461514571588}
+-fulfillAnswer | answer id 101
+notifyTeacherAboutAnswer | teacherId 1
++registerQuestion | {"studentId":1,"questionTopic":"tp1","questionContent":"preg2?"}
+broadcastQuestion | 5002 to 127.0.0.1:8101
+broadcastQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg2?","answers":[],"date":1461514622117,"id":5002}
+broadcastQuestion | 5002 to 127.0.0.1:8102
+broadcastQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg2?","answers":[],"date":1461514622117,"id":5002}
+broadcastQuestion | 5002 to 127.0.0.1:8202
+broadcastQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg2?","answers":[],"date":1461514622117,"id":5002}
+-registerQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg2?","answers":[],"date":1461514622117,"id":5002}
+
++registerAnswer | {"answerAuthorId":1,"answerCreationDate":1461514626466}
+-registerAnswer | new answer id 102
+
+notifyTeacherAboutAnswer | teacherId 2
++fulfillAnswer | {"answerAuthorId":1,"answerContent":"rta docente1","answerFulfillmentDate":1461514626472}
+-fulfillAnswer | answer id 102
++registerQuestion | {"studentId":1,"questionTopic":"tp1","questionContent":"preg3?"}
+broadcastQuestion | 5003 to 127.0.0.1:8101
+broadcastQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg3?","answers":[],"date":1461514627118,"id":5003}
+broadcastQuestion | 5003 to 127.0.0.1:8102
+broadcastQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg3?","answers":[],"date":1461514627118,"id":5003}
+broadcastQuestion | 5003 to 127.0.0.1:8202
+broadcastQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg3?","answers":[],"date":1461514627118,"id":5003}
+-registerQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg3?","answers":[],"date":1461514627118,"id":5003}
+
++registerAnswer | {"answerAuthorId":2,"answerCreationDate":1461514629101}
+-registerAnswer | new answer id 103
+
++fulfillAnswer | {"answerAuthorId":2,"answerContent":"rta docente2","answerFulfillmentDate":1461514629105}
+-fulfillAnswer | answer id 103
+notifyTeacherAboutAnswer | teacherId 1
++registerQuestion | {"studentId":2,"questionTopic":"tp1","questionContent":"preg3?"}
+broadcastQuestion | 5004 to 127.0.0.1:8101
+broadcastQuestion | {"author":{"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2},"topic":"tp1","content":"preg3?","answers":[],"date":1461514660370,"id":5004}
+broadcastQuestion | 5004 to 127.0.0.1:8102
+broadcastQuestion | {"author":{"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2},"topic":"tp1","content":"preg3?","answers":[],"date":1461514660370,"id":5004}
+broadcastQuestion | 5004 to 127.0.0.1:8201
+broadcastQuestion | {"author":{"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2},"topic":"tp1","content":"preg3?","answers":[],"date":1461514660370,"id":5004}
+-registerQuestion | {"author":{"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2},"topic":"tp1","content":"preg3?","answers":[],"date":1461514660370,"id":5004}
+
++registerQuestion | {"studentId":2,"questionTopic":"tp1","questionContent":"preg3?"}
+broadcastQuestion | 5005 to 127.0.0.1:8101
+broadcastQuestion | {"author":{"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2},"topic":"tp1","content":"preg3?","answers":[],"date":1461514660639,"id":5005}
+broadcastQuestion | 5005 to 127.0.0.1:8102
+broadcastQuestion | {"author":{"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2},"topic":"tp1","content":"preg3?","answers":[],"date":1461514660639,"id":5005}
+broadcastQuestion | 5005 to 127.0.0.1:8201
+broadcastQuestion | {"author":{"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2},"topic":"tp1","content":"preg3?","answers":[],"date":1461514660639,"id":5005}
+-registerQuestion | {"author":{"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2},"topic":"tp1","content":"preg3?","answers":[],"date":1461514660639,"id":5005}
+
++registerAnswer | {"answerAuthorId":1,"answerCreationDate":1461514662274}
+-registerAnswer | new answer id 104
+
++fulfillAnswer | {"answerAuthorId":1,"answerContent":"rta docente1","answerFulfillmentDate":1461514662279}
+-fulfillAnswer | answer id 104
++registerAnswer | {"answerAuthorId":2,"answerCreationDate":1461514666460}
+-registerAnswer | new answer id 105
+
++fulfillAnswer | {"answerAuthorId":2,"answerContent":"rta docente2","answerFulfillmentDate":1461514666465}
+-fulfillAnswer | answer id 105
++registerAnswer | {"answerAuthorId":2,"answerCreationDate":1461514667821}
+-registerAnswer | Question 5005 has been already answered.
+
++registerAnswer | {"answerAuthorId":1,"answerCreationDate":1461514668709}
+-registerAnswer | Question 5004 has been already answered.
+
+notifyTeacherAboutAnswer | teacherId 2
+notifyTeacherAboutAnswer | teacherId 1

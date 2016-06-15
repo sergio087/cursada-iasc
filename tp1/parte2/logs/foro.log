@@ -1,0 +1,28 @@
+Magic happens on port 8001
++registerTeacher | {"name":"docente1","id":null,"host":{"host":"127.0.0.1","port":"8101"},"questions":[],"promiseByQuestion":[]}
+-registerTeacher | {"name":"docente1","endpoint":{"host":"127.0.0.1","port":"8101"},"id":1}
+
++registerTeacher | {"name":"docente2","id":null,"host":{"host":"127.0.0.1","port":"8102"},"questions":[],"promiseByQuestion":[]}
+-registerTeacher | {"name":"docente2","endpoint":{"host":"127.0.0.1","port":"8102"},"id":2}
+
++registerStudent | {"name":"alumno1","id":null,"host":{"host":"127.0.0.1","port":"8201"}}
+-registerStudent | {"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1}
+
++registerStudent | {"name":"alumno2","id":null,"host":{"host":"127.0.0.1","port":"8202"}}
+-registerStudent | {"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2}
+
++registerQuestion | {"studentId":2,"questionTopic":"tp1","questionContent":"preg3?"}
+sendQuestion | 5001 to 127.0.0.1:8101
+sendQuestion | 5001 to 127.0.0.1:8102
+sendQuestion | 5001 to 127.0.0.1:8201
+-registerQuestion | {"author":{"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2},"topic":"tp1","content":"preg3?","answers":[],"date":1461525810691,"id":5001}
+
++registerAnswer | {"answerAuthorId":1,"answerCreationDate":1461525816847}
+-registerAnswer | new answer id 101
+
++fulfillAnswer | {"answerAuthorId":1,"answerContent":"rta docente1","answerFulfillmentDate":1461525816856}
+sendAnswer | 101 to 127.0.0.1:8102
+sendAnswer | 101 to 127.0.0.1:8201
+sendAnswer | 101 to 127.0.0.1:8202
+-fulfillAnswer | answer id 101
+notifyTeacherAboutAnswer | teacherId 2

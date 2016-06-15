@@ -1,0 +1,9 @@
+Magic happens on port 8102
+signInForum | teacher id 2 was assigned.
++resolveQuestion | {"author":{"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2},"topic":"tp1","content":"preg3?","answers":[],"date":1461525810691,"id":5001}
+-resolveQuestion | {"id":5001,"topic":"tp1","content":"preg3?","date_ask":1461525810691,"answerId":null,"answerContent":"","answerCreationDate":null,"answerFulfillmentDate":null}
+
++discardQuestion | questionId 5001
+-discardQuestion | questionId 5001
+Warning! resolveQuestion - (by cancel) no tengo q seguir contestando, alguien fue mas rapido
+inbox answer: 101 from question: 5001

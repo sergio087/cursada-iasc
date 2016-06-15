@@ -1,0 +1,30 @@
+Magic happens on port 8102
+signInForum | teacher id 2 was assigned.
++resolveQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg1?","answers":[],"date":1461514570717,"id":5001}
+-resolveQuestion | {"id":5001,"topic":"tp1","content":"preg1?","date_ask":1461514570717,"answerId":null,"answerContent":"","answerCreationDate":null,"answerFulfillmentDate":null}
+
+notifyIntendedToAnswer | answer id 101 was assigned.
+sendAnswer | {"id":5001,"topic":"tp1","content":"preg1?","date_ask":1461514570717,"answerId":101,"answerContent":"rta docente2","answerCreationDate":1461514571582,"answerFulfillmentDate":1461514571588}
++resolveQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg2?","answers":[],"date":1461514622117,"id":5002}
+-resolveQuestion | {"id":5002,"topic":"tp1","content":"preg2?","date_ask":1461514622117,"answerId":null,"answerContent":"","answerCreationDate":null,"answerFulfillmentDate":null}
+
++discardQuestion | questionId 5002
+-discardQuestion | questionId 5002
+Warning! resolveQuestion - (by cancel) no tengo q seguir contestando, alguien fue mas rapido
++resolveQuestion | {"author":{"name":"alumno1","endpoint":{"host":"127.0.0.1","port":"8201"},"id":1},"topic":"tp1","content":"preg3?","answers":[],"date":1461514627118,"id":5003}
+-resolveQuestion | {"id":5003,"topic":"tp1","content":"preg3?","date_ask":1461514627118,"answerId":null,"answerContent":"","answerCreationDate":null,"answerFulfillmentDate":null}
+
+notifyIntendedToAnswer | answer id 103 was assigned.
+sendAnswer | {"id":5003,"topic":"tp1","content":"preg3?","date_ask":1461514627118,"answerId":103,"answerContent":"rta docente2","answerCreationDate":1461514629101,"answerFulfillmentDate":1461514629105}
++resolveQuestion | {"author":{"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2},"topic":"tp1","content":"preg3?","answers":[],"date":1461514660370,"id":5004}
+-resolveQuestion | {"id":5004,"topic":"tp1","content":"preg3?","date_ask":1461514660370,"answerId":null,"answerContent":"","answerCreationDate":null,"answerFulfillmentDate":null}
+
++resolveQuestion | {"author":{"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2},"topic":"tp1","content":"preg3?","answers":[],"date":1461514660639,"id":5005}
+-resolveQuestion | {"id":5005,"topic":"tp1","content":"preg3?","date_ask":1461514660639,"answerId":null,"answerContent":"","answerCreationDate":null,"answerFulfillmentDate":null}
+
+notifyIntendedToAnswer | answer id 105 was assigned.
+sendAnswer | {"id":5004,"topic":"tp1","content":"preg3?","date_ask":1461514660370,"answerId":105,"answerContent":"rta docente2","answerCreationDate":1461514666460,"answerFulfillmentDate":1461514666465}
+notifyIntendedToAnswer | Question 5005 has been already answered.
+Warning! resolveQuestion - (by reject)Question 5005 has been already answered.
++discardQuestion | questionId 5005
+-discardQuestion | questionId 5005

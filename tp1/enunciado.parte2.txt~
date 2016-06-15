@@ -1,0 +1,46 @@
+Clase 3 - TP 2 - Ayudantes, Parte 2
+
+La idea de este TP en clase es poner en práctica 
+Nuestro entendimiento del event loop
+Diseñar empleando Promises
+IO async. 
+
+Utilizaremos NodeJS, pero evitaremos caer en sus malas prácticas de manejo de error. 
+
+Descripción del Problema
+
+Continuamos con nuestra lista de consultas. Se pide encarar las siguientes nuevas iteraciones.
+Antes de empezar
+
+Convertir el código heredado escrito en CPS a Promises. 
+
+Cuarta iteración
+Un buen docente no debería empezar responder si se entera que otro docente está escribiendo.
+
+Quinta iteración
+Un buen docente, cuando se entera de que otro empezó a escribir, debería incluso dejar de escribir si ya se encontraba haciéndolo. 
+Pensar: ¿podría haber un problema con este requerimiento? 
+Proponer una forma de resolverlo.
+¿Trae la solución algún problema a la arquitectura?
+¿Qué conclusión podés sacar de eso?
+
+Sexta iteración
+Nadie debería estar simultáneamente respondiendo más de una pregunta; no informar a un docente de una nueva pregunta si ya está respondiendo una. 
+
+Séptima iteración
+Para pensar: ¿qué pasa si...
+Se cae la lista de correos?
+rta: los alumnos y docentes deben informar q no se pudo enviar peticion, luego retener la peticion y volver a intentar luego. la lista de correos debe ser monitoreada para q cuando no responda a un mensaje (heartbeat) se reinicie. 
+Se cae un alumno?
+rta: al intentar comunicarce y no responder, se lo marca como offline y las peticiones actuales y las futuras se guardan en una coleccion de peticiones no enviadas. Luego cuando el proceso alumno se levante lo primero q hace es ir a buscar a la lista peticiones no enviadas y ahi tmb la lista entiende q volvio a estar online.
+Se cae un docente que estaba respondiendo?
+Se cae un docente que acababa de responder?
+No se cae nadie, pero se cae la red?
+La lista de correos no llega a responder lo suficientemente rápido?
+
+
+Cierre
+
+Retomando las preguntas anteriores: ¿Qué pasaría si levantamos múltiples procesos lista, y mantener aún todas las garantías anteriores? Proponer una solución.
+
+

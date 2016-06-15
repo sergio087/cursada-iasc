@@ -1,0 +1,7 @@
+Magic happens on port 8101
+signInForum | teacher id 1 was assigned.
++resolveQuestion | {"author":{"name":"alumno2","endpoint":{"host":"127.0.0.1","port":"8202"},"id":2},"topic":"tp1","content":"preg3?","answers":[],"date":1461525810691,"id":5001}
+-resolveQuestion | {"id":5001,"topic":"tp1","content":"preg3?","date_ask":1461525810691,"answerId":null,"answerContent":"","answerCreationDate":null,"answerFulfillmentDate":null}
+
+notifyIntendedToAnswer | answer id 101 was assigned.
+sendAnswer | {"id":5001,"topic":"tp1","content":"preg3?","date_ask":1461525810691,"answerId":101,"answerContent":"rta docente1","answerCreationDate":1461525816847,"answerFulfillmentDate":1461525816856}

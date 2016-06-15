@@ -1,0 +1,1 @@
+	Esta iteracion es un intento fallido de refactorizar y utilizar promises. Aunq se convirtieron algunos retornos de funciones a Promises no tenia mucho justificativo q se usara. Lo aplicaria en funciones q si son async
