@@ -59,6 +59,7 @@ defmodule User do
           }
         )
 
+      #envio un mensaje -msg- de -tx- para la conversacion -chat-
       {_caller, :sendMsg, serverMsg} ->
         IO.puts "#{inspect self} :sendMsg (user)"
         send(user.server, {self, :notifyWriting, serverMsg})
@@ -146,7 +147,7 @@ defmodule User do
         )
 
       #notifica que tx esta escribiendo en el chat
-      {_caller, :notifyWriting, serverMsg} ->
+      {_caller, :notifyWriting, _serverMsg} ->
         IO.puts "#{inspect self} :notifyWriting (user)"
         loop(user)
 
@@ -158,7 +159,7 @@ defmodule User do
         loop(
           %User{
             name: user.name, 
-            msgsByChats: newMsgs, 
+            msgsByChats: Map.put(user.msgsByChats, chat, newMsgs), 
             server: user.server
           }
         )
@@ -207,7 +208,7 @@ defmodule ChatServer do
   defstruct [
     name: "", 
     users: %{}, #pid -> name
-    chats: %{}, #name -> pid
+    chats: %{}, #id -> pid
     sqChatsId: 0
   ]
 
@@ -224,12 +225,12 @@ defmodule ChatServer do
         loop(server)
 
       #crear cuenta de usuario
-      {_caller, :signUp, user} ->
+      {caller, :signUp, user} ->
         IO.puts "#{inspect self} :signUp (server)"
         loop(
           %ChatServer{
             name: server.name, 
-            users: Map.put(server.users, _caller, user.name),
+            users: Map.put(server.users, caller, user.name),
             chats: server.chats,
             sqChatsId: server.sqChatsId
           }
@@ -267,7 +268,7 @@ defmodule ChatServer do
         )
 
       #crear conversacion entre usuarios tipo broadcast
-      {_caller, :createBroadcastChat, owner, users} ->
+      {_caller, :createBroadcastChat, _owner, _users} ->
         IO.puts "#{inspect self} :createBroadcastChat (server)"
 
       #envia mensaje a rx de parte de tx
